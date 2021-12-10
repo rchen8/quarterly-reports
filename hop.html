@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div id="myDiv"></div>
+<script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+xValues = ['Jun 2021', 'Jul 2021', 'Aug 2021', 'Sep 2021']
+ethereum = [29638.95986,6925724.756,16436533.21,31364584.08]
+polygon = [28583.88720450946,3753624.707237253,10211840.705974258,14354506.31019199]
+optimism = [0,0,0,7305606.790852]
+xdai = [26293.719468,345293.280081,863881.984561,1440735.739929]
+
+Plotly.newPlot('myDiv', [{
+  x: xValues,
+  y: ethereum,
+  marker: {
+    color: 'rgb(24, 4, 64)',
+  },
+  name: 'Ethereum',
+  type: 'bar'
+}, {
+  x: xValues,
+  y: polygon,
+  marker: {
+    color: 'rgb(15, 69, 121)',
+  },
+  name: 'Polygon',
+  type: 'bar'
+}, {
+  x: xValues,
+  y: optimism,
+  marker: {
+    color: 'rgb(108, 178, 173)',
+  },
+  name: 'Optimism',
+  type: 'bar'
+}, {
+  x: xValues,
+  y: xdai,
+  marker: {
+    color: 'rgb(205, 230, 214)',
+  },
+  name: 'xDai',
+  type: 'bar'
+}], {
+  barmode: 'stack',
+  title: {
+    text: "Monthly volume", // TODO
+    font: {
+      size: 24
+    }
+  },
+  xaxis: {
+    tickfont: {
+      size: 18
+    }
+  },
+  yaxis: {
+    tickfont: {
+      size: 18
+    }
+  },
+  legend: {
+    font: {
+      size: 18
+    }
+  },
+  images: [{
+    source: "https://dl.dropboxusercontent.com/s/m7lzh1xgkhe7tt7/1confirmation.png",
+    xref: "paper",
+    yref: "paper",
+    x: 0.415,
+    y: 0.625,
+    sizex: 0.25,
+    sizey: 0.25,
+    opacity: 0.2,
+    layer: "below"
+  }]
+}, {responsive: true})
+</script>
+</body>
+</html>
+
+<!-- 
+Bitcoin: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.MinPointZero1Count
+Ethereum: https://studio.glassnode.com/metrics?a=ETH&category=Addresses&m=addresses.Min1Count
+          https://etherscan.io/chart/transactionfee
+Maker: https://explore.duneanalytics.com/public/dashboards/HDfmSXd9EwVvgoIAsh44DcprJ5zAkGIm1M4u34da
+Augur: Own script
+OpenSea: https://explore.duneanalytics.com/public/dashboards/oYE5ns4pgCusLOdKJW4UVNJrXNOXhbblF99QlF2i
+Cosmos: Ask Felix
+Polkadot: https://polkadot.subscan.io/account
+Kusama: https://kusama.subscan.io/account
+Nervos: https://explorer.nervos.org/charts/balance-distribution
+BAT: https://brave.com/transparency/
+Edgeware: https://edgeware.subscan.io/account
+dYdX: https://explore.duneanalytics.com/public/dashboards/AU7ZSx67NOEwqELtIDyzpPlpAGNJJnW0hmeuwwO9
+Nexus: http://nexustracker.io/
+Authereum: https://explore.duneanalytics.com/dashboard/authereum_1
+Polymarket: https://explore.duneanalytics.com/queries/10442
+SuperRare: https://explore.duneanalytics.com/dashboard/superrare_4#14044
+ -->

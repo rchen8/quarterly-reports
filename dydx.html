@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div id="myDiv"></div>
+<script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+xValues = ['2019-05-01T00:00:00Z','2019-06-01T00:00:00Z','2019-07-01T00:00:00Z','2019-08-01T00:00:00Z','2019-09-01T00:00:00Z','2019-10-01T00:00:00Z','2019-11-01T00:00:00Z','2019-12-01T00:00:00Z','2020-01-01T00:00:00Z','2020-02-01T00:00:00Z','2020-03-01T00:00:00Z','2020-04-01T00:00:00Z','2020-05-01T00:00:00Z','2020-06-01T00:00:00Z','2020-07-01T00:00:00Z','2020-08-01T00:00:00Z','2020-09-01T00:00:00Z','2020-10-01T00:00:00Z','2020-11-01T00:00:00Z','2020-12-01T00:00:00Z','2021-01-01T00:00:00Z','2021-02-01T00:00:00Z','2021-03-01T00:00:00Z','2021-04-01T00:00:00Z','2021-05-01T00:00:00Z','2021-06-01T00:00:00Z','2021-07-01T00:00:00Z','2021-08-01T00:00:00Z','2021-09-01T00:00:00Z']
+yValues = [139639.3035,371089.8021,273693.6487,100786.402,3972208.586,7709189.144,25688660.76,22380771.36,28935761.64,114223281.8,187516638.1,121954583.8,151200886.5,157714859.3,252764782.8,294038991.3,145183779.7,91516944.93,284984226.4,316904511.2,1082138568,1019900786,421918430.8,976706128.5,2252839592,1019433604,928046007.9,14388445955,54122741428]
+
+Plotly.newPlot('myDiv', [{
+  x: xValues,
+  y: yValues,
+  marker: {
+    color: 'rgb(15, 69, 121)',
+  },
+  name: 'Primary Market',
+  type: 'bar'
+}], {
+  barmode: 'stack',
+  title: {
+    text: "Monthly volume", // TODO
+    font: {
+      size: 24
+    }
+  },
+  xaxis: {
+    tickfont: {
+      size: 18
+    }
+  },
+  yaxis: {
+    tickfont: {
+      size: 18
+    }
+  },
+  legend: {
+    font: {
+      size: 18
+    }
+  },
+  images: [{
+    source: "https://dl.dropboxusercontent.com/s/m7lzh1xgkhe7tt7/1confirmation.png",
+    xref: "paper",
+    yref: "paper",
+    x: 0.415,
+    y: 0.625,
+    sizex: 0.25,
+    sizey: 0.25,
+    opacity: 0.2,
+    layer: "below"
+  }]
+}, {responsive: true})
+</script>
+</body>
+</html>
+
+<!-- 
+Bitcoin: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.MinPointZero1Count
+Ethereum: https://studio.glassnode.com/metrics?a=ETH&category=Addresses&m=addresses.Min1Count
+          https://etherscan.io/chart/transactionfee
+Maker: https://explore.duneanalytics.com/public/dashboards/HDfmSXd9EwVvgoIAsh44DcprJ5zAkGIm1M4u34da
+Augur: Own script
+OpenSea: https://explore.duneanalytics.com/public/dashboards/oYE5ns4pgCusLOdKJW4UVNJrXNOXhbblF99QlF2i
+Cosmos: Ask Felix
+Polkadot: https://polkadot.subscan.io/account
+Kusama: https://kusama.subscan.io/account
+Nervos: https://explorer.nervos.org/charts/balance-distribution
+BAT: https://brave.com/transparency/
+Edgeware: https://edgeware.subscan.io/account
+dYdX: https://explore.duneanalytics.com/public/dashboards/AU7ZSx67NOEwqELtIDyzpPlpAGNJJnW0hmeuwwO9
+Nexus: http://nexustracker.io/
+Authereum: https://explore.duneanalytics.com/dashboard/authereum_1
+Polymarket: https://explore.duneanalytics.com/queries/10442
+SuperRare: https://explore.duneanalytics.com/dashboard/superrare_4#14044
+ -->

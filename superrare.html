@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div id="myDiv"></div>
+<script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+xValues = ['2018-04-01T00:00:00Z','2018-05-01T00:00:00Z','2018-06-01T00:00:00Z','2018-07-01T00:00:00Z','2018-08-01T00:00:00Z','2018-09-01T00:00:00Z','2018-10-01T00:00:00Z','2018-11-01T00:00:00Z','2018-12-01T00:00:00Z','2019-01-01T00:00:00Z','2019-02-01T00:00:00Z','2019-03-01T00:00:00Z','2019-04-01T00:00:00Z','2019-05-01T00:00:00Z','2019-06-01T00:00:00Z','2019-07-01T00:00:00Z','2019-08-01T00:00:00Z','2019-09-01T00:00:00Z','2019-10-01T00:00:00Z','2019-11-01T00:00:00Z','2019-12-01T00:00:00Z','2020-01-01T00:00:00Z','2020-02-01T00:00:00Z','2020-03-01T00:00:00Z','2020-04-01T00:00:00Z','2020-05-01T00:00:00Z','2020-06-01T00:00:00Z','2020-07-01T00:00:00Z','2020-08-01T00:00:00Z','2020-09-01T00:00:00Z','2020-10-01T00:00:00Z','2020-11-01T00:00:00Z','2020-12-01T00:00:00Z','2021-01-01T00:00:00Z','2021-02-01T00:00:00Z','2021-03-01T00:00:00Z','2021-04-01T00:00:00Z','2021-05-01T00:00:00Z','2021-06-01T00:00:00Z','2021-07-01T00:00:00Z','2021-08-01T00:00:00Z','2021-09-01T00:00:00Z']
+yValues1 = [6562.07435,6702.76661,1514.86212,4626.91901,2016.033059,3626.450398,2628.256159,11511.93002,4210.83466,17470.95134,10841.79075,16014.41236,4220.49334,9937.678814,4714.237574,2881.93641,8355.653463,9622.816367,8046.607723,50350.66503,128191.3012,103299.3765,123996.3688,97945.52339,81083.05775,134568.6493,200583.9469,304980.3733,489620.5981,580247.2249,1139444.988,935592.5159,1016384.025,1633523.408,7516504.635,18794371.53,10843401.88,5201377.401,2217873.548,3347092.471,13464849.41,11514007.28]
+yValues2 = [0,0,0,111.7170959,0,118.902,1504.556,73.53020406,0,800.6846,439.2725,540.05,260.6066,1033.32412,173.0243,28.866,809.300642,35.39,465.463,5173.9245,14993.49159,7790.26129,15869.22825,9519.82231,24901.8635,36505.25509,49427.88038,85392.64669,156186.0877,196948.4239,187884.8107,114789.8145,111463.5924,654924.9351,2865309.496,10775213.96,5369285.644,2349637.113,557843.9882,2767685.379,13117111.54,13037142.35]
+
+Plotly.newPlot('myDiv', [{
+  x: xValues,
+  y: yValues1,
+  marker: {
+    color: 'rgb(15, 69, 121)',
+  },
+  name: 'Primary',
+  type: 'bar'
+}, {
+  x: xValues,
+  y: yValues2,
+  marker: {
+    color: 'rgb(205, 230, 214)',
+  },
+  name: 'Secondary',
+  type: 'bar'
+}], {
+  barmode: 'stack',
+  title: {
+    text: "Monthly volume", // TODO
+    font: {
+      size: 24
+    }
+  },
+  xaxis: {
+    tickfont: {
+      size: 18
+    }
+  },
+  yaxis: {
+    tickfont: {
+      size: 18
+    }
+  },
+  legend: {
+    font: {
+      size: 18
+    }
+  },
+  images: [{
+    source: "https://dl.dropboxusercontent.com/s/m7lzh1xgkhe7tt7/1confirmation.png",
+    xref: "paper",
+    yref: "paper",
+    x: 0.415,
+    y: 0.625,
+    sizex: 0.25,
+    sizey: 0.25,
+    opacity: 0.2,
+    layer: "below"
+  }]
+}, {responsive: true})
+</script>
+</body>
+</html>
+
+<!-- 
+Bitcoin: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.MinPointZero1Count
+Ethereum: https://studio.glassnode.com/metrics?a=ETH&category=Addresses&m=addresses.Min1Count
+          https://etherscan.io/chart/transactionfee
+Maker: https://explore.duneanalytics.com/public/dashboards/HDfmSXd9EwVvgoIAsh44DcprJ5zAkGIm1M4u34da
+Augur: Own script
+OpenSea: https://explore.duneanalytics.com/public/dashboards/oYE5ns4pgCusLOdKJW4UVNJrXNOXhbblF99QlF2i
+Cosmos: Ask Felix
+Polkadot: https://polkadot.subscan.io/account
+Kusama: https://kusama.subscan.io/account
+Nervos: https://explorer.nervos.org/charts/balance-distribution
+BAT: https://brave.com/transparency/
+Edgeware: https://edgeware.subscan.io/account
+dYdX: https://explore.duneanalytics.com/public/dashboards/AU7ZSx67NOEwqELtIDyzpPlpAGNJJnW0hmeuwwO9
+Nexus: http://nexustracker.io/
+Authereum: https://explore.duneanalytics.com/dashboard/authereum_1
+Polymarket: https://explore.duneanalytics.com/queries/10442
+SuperRare: https://explore.duneanalytics.com/dashboard/superrare_4#14044
+ -->

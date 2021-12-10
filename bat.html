@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div id="myDiv"></div>
+<script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+xValues = ['2019-06-01 00:00:00','2019-07-01 00:00:00','2019-08-01 00:00:00','2019-09-01 00:00:00','2019-10-01 00:00:00','2019-11-01 00:00:00','2019-12-01 00:00:00','2020-01-01 00:00:00','2020-02-01 00:00:00','2020-03-01 00:00:00','2020-04-01 00:00:00','2020-05-01 00:00:00','2020-06-01 00:00:00','2020-07-01 00:00:00','2020-08-01 00:00:00','2020-09-01 00:00:00','2020-10-01 00:00:00','2020-11-01 00:00:00','2020-12-01 00:00:00','2021-01-01 00:00:00','2021-02-01 00:00:00']
+yValues = [5.2,6,6.8,7.2,8,10.8,11.4,11.8,12.2,13.3,13.9,15.4,15.6,16.7,18.3,19.6,20.5,22.2,24.1,25.4,25.4]
+
+Plotly.newPlot('myDiv', [{
+  x: xValues,
+  y: yValues,
+  marker: {
+    color: 'rgb(15, 69, 121)',
+  },
+  fill: 'tozeroy',
+  type: 'scatter'
+}], {
+  title: {
+    text: "Monthly active users (in millions)", // TODO
+    font: {
+      size: 24
+    }
+  },
+  xaxis: {
+    tickfont: {
+      size: 18
+    }
+  },
+  yaxis: {
+    // range: [1053882, 1168000], // TODO
+    tickfont: {
+      size: 18
+    }
+  },
+  images: [{
+    source: "https://dl.dropboxusercontent.com/s/m7lzh1xgkhe7tt7/1confirmation.png",
+    xref: "paper",
+    yref: "paper",
+    x: 0.415,
+    y: 0.625,
+    sizex: 0.25,
+    sizey: 0.25,
+    opacity: 0.2,
+    layer: "below"
+  }]
+}, {responsive: true})
+</script>
+</body>
+</html>
+
+<!-- 
+Bitcoin: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.MinPointZero1Count
+Ethereum: https://studio.glassnode.com/metrics?a=ETH&category=Addresses&m=addresses.Min1Count
+          https://etherscan.io/chart/transactionfee
+Maker: https://explore.duneanalytics.com/public/dashboards/HDfmSXd9EwVvgoIAsh44DcprJ5zAkGIm1M4u34da
+Augur: Own script
+OpenSea: https://explore.duneanalytics.com/public/dashboards/oYE5ns4pgCusLOdKJW4UVNJrXNOXhbblF99QlF2i
+Cosmos: Ask Felix
+Polkadot: https://polkadot.subscan.io/account?role=all&page=1107
+Kusama: https://kusama.subscan.io/account
+Nervos: https://explorer.nervos.org/charts/balance-distribution
+BAT: https://bravebat.info/brave_browser_active_users
+Edgeware: https://edgeware.subscan.io/account
+dYdX: https://explore.duneanalytics.com/public/dashboards/AU7ZSx67NOEwqELtIDyzpPlpAGNJJnW0hmeuwwO9
+Nexus: http://nexustracker.io/
+Authereum: https://explore.duneanalytics.com/dashboard/authereum_1
+Polymarket: https://explore.duneanalytics.com/queries/10442
+SuperRare: https://explore.duneanalytics.com/dashboard/superrare_4#14044
+ -->

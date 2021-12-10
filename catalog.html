@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div id="myDiv"></div>
+<script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+xValues = ['2021-03-01T00:00:00+00:00','2021-04-01T00:00:00+00:00','2021-05-01T00:00:00+00:00','2021-06-01T00:00:00+00:00','2021-07-01T00:00:00+00:00','2021-08-01T00:00:00+00:00','2021-09-01T00:00:00+00:00']
+yValues = [90237.48129999998,40094.983362000006,51899.916399999995,12278.361089999999,5501.52537,41216.232383,42696.14062500001]
+
+Plotly.newPlot('myDiv', [{
+  x: xValues,
+  y: yValues,
+  marker: {
+    color: 'rgb(15, 69, 121)',
+  },
+  name: 'Primary Market',
+  type: 'bar'
+}], {
+  title: {
+    text: "Monthly volume", // TODO
+    font: {
+      size: 24
+    }
+  },
+  xaxis: {
+    tickfont: {
+      size: 18
+    }
+  },
+  yaxis: {
+    tickfont: {
+      size: 18
+    }
+  },
+  images: [{
+    source: "https://dl.dropboxusercontent.com/s/m7lzh1xgkhe7tt7/1confirmation.png",
+    xref: "paper",
+    yref: "paper",
+    x: 0.415,
+    y: 0.625,
+    sizex: 0.25,
+    sizey: 0.25,
+    opacity: 0.2,
+    layer: "below"
+  }]
+}, {responsive: true})
+</script>
+</body>
+</html>
+
+<!-- 
+Bitcoin: https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.MinPointZero1Count
+Ethereum: https://studio.glassnode.com/metrics?a=ETH&category=Addresses&m=addresses.Min1Count
+          https://etherscan.io/chart/transactionfee
+Maker: https://explore.duneanalytics.com/public/dashboards/HDfmSXd9EwVvgoIAsh44DcprJ5zAkGIm1M4u34da
+Augur: Own script
+OpenSea: https://explore.duneanalytics.com/public/dashboards/oYE5ns4pgCusLOdKJW4UVNJrXNOXhbblF99QlF2i
+Cosmos: Ask Felix
+Polkadot: https://polkadot.subscan.io/account
+Kusama: https://kusama.subscan.io/account
+Nervos: https://explorer.nervos.org/charts/balance-distribution
+BAT: https://brave.com/transparency/
+Edgeware: https://edgeware.subscan.io/account
+dYdX: https://explore.duneanalytics.com/public/dashboards/AU7ZSx67NOEwqELtIDyzpPlpAGNJJnW0hmeuwwO9
+Nexus: http://nexustracker.io/
+Authereum: https://explore.duneanalytics.com/dashboard/authereum_1
+Polymarket: https://explore.duneanalytics.com/queries/10442
+SuperRare: https://explore.duneanalytics.com/dashboard/superrare_4#14044
+ -->
